@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "Honores_Grado_Noel.html",
+      "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    { "src": "/", "dest": "/Honores_Grado_Noel.html" },
+    { "src": "/Honores_Grado_Noel.html" }
+  ]
+}
