@@ -59,6 +59,11 @@
             opacity: 1;
         }
 
+        /* Más partículas visibles */
+        @media (min-width: 768px) {
+            #particles { z-index: 3; }
+        }
+
         /* ========== HERO FIJO ========== */
         .hero {
             position: relative;
@@ -413,20 +418,23 @@
         }
 
         .btn-gate {
-            background: rgba(230, 57, 70, 0.08);
+            background: rgba(230, 57, 70, 0.25);
             color: white;
-            border: 1px solid rgba(230, 57, 70, 0.4);
+            border: 1px solid rgba(230, 57, 70, 0.6);
+            box-shadow: 0 0 20px rgba(230, 57, 70, 0.3), 0 4px 12px rgba(0, 0, 0, 0.2);
         }
 
         .btn-gate:hover {
-            background: rgba(230, 57, 70, 0.15);
+            background: rgba(230, 57, 70, 0.4);
             border-color: var(--rojo);
             transform: translateY(-2px);
+            box-shadow: 0 0 30px rgba(230, 57, 70, 0.5), 0 6px 20px rgba(0, 0, 0, 0.3);
         }
 
         .btn-gate.active {
             background: linear-gradient(135deg, var(--rojo) 0%, var(--rojo-hover) 100%);
             border-color: transparent;
+            box-shadow: 0 0 40px rgba(230, 57, 70, 0.6);
         }
 
         /* ========== GATE REVEAL ========== */
@@ -443,13 +451,14 @@
         }
 
         .gate-content {
-            background: linear-gradient(135deg, rgba(230, 57, 70, 0.15) 0%, rgba(230, 57, 70, 0.05) 100%);
-            border: 1px solid rgba(230, 57, 70, 0.25);
+            background: linear-gradient(135deg, rgba(230, 57, 70, 0.3) 0%, rgba(230, 57, 70, 0.1) 100%);
+            border: 1px solid rgba(230, 57, 70, 0.5);
             border-radius: 1.25rem;
             padding: 1.25rem;
             text-align: center;
             position: relative;
             overflow: hidden;
+            box-shadow: 0 0 30px rgba(230, 57, 70, 0.3);
         }
 
         .gate-content::before {
@@ -780,13 +789,13 @@
             constructor(x, y, burst = false) {
                 this.x = x || Math.random() * canvas.width;
                 this.y = y || Math.random() * canvas.height;
-                this.size = Math.random() * 2.5 + 1;
+                this.size = Math.random() * 4 + 2;
                 this.color = holiColors[Math.floor(Math.random() * holiColors.length)];
-                this.speedX = (Math.random() - 0.5) * 0.3;
-                this.speedY = (Math.random() - 0.5) * 0.3;
-                this.opacity = Math.random() * 0.25 + 0.1;
+                this.speedX = (Math.random() - 0.5) * 0.4;
+                this.speedY = (Math.random() - 0.5) * 0.4;
+                this.opacity = Math.random() * 0.5 + 0.25;
                 this.life = 1;
-                this.decay = burst ? 0.012 : 0.001;
+                this.decay = burst ? 0.015 : 0.002;
                 this.isBurst = burst;
             }
 
