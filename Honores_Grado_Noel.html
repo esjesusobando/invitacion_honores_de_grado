@@ -89,15 +89,21 @@
             transform: scale(1);
         }
 
-        /* Glow orbs */
+        /* Glow orbs - menos intenso en móvil */
         .glow-orb {
             position: absolute;
             border-radius: 50%;
             filter: blur(80px);
-            opacity: 0.3;
+            opacity: 0.15;
             pointer-events: none;
             animation: float 6s ease-in-out infinite;
             z-index: 2;
+        }
+
+        @media (min-width: 768px) {
+            .glow-orb {
+                opacity: 0.3;
+            }
         }
 
         .glow-orb-1 {
@@ -213,10 +219,27 @@
         }
 
         h1 span {
-            background: linear-gradient(135deg, var(--rojo) 0%, #FF8A9B 100%);
+            background: linear-gradient(135deg, var(--rojo) 0%, #FF8A9B 50%, var(--blanco) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+        }
+
+        /* Engineering text with gradient overlay for mobile readability */
+        .engineering-text {
+            position: relative;
+            display: inline-block;
+        }
+
+        .engineering-text::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 70%;
+            background: linear-gradient(to top, var(--negro) 0%, transparent 100%);
+            pointer-events: none;
         }
 
         .subtitle {
