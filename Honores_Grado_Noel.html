@@ -94,12 +94,12 @@
             transform: scale(1);
         }
 
-        /* Glow orbs - menos intenso en móvil */
+        /* Glow orbs - muy sutil para no interferir con texto */
         .glow-orb {
             position: absolute;
             border-radius: 50%;
-            filter: blur(80px);
-            opacity: 0.15;
+            filter: blur(100px);
+            opacity: 0.1;
             pointer-events: none;
             animation: float 6s ease-in-out infinite;
             z-index: 2;
@@ -107,7 +107,7 @@
 
         @media (min-width: 768px) {
             .glow-orb {
-                opacity: 0.3;
+                opacity: 0.15;
             }
         }
 
@@ -143,20 +143,21 @@
             66% { transform: translate(-10px, 15px) scale(0.95); }
         }
 
-        /* Gradient mask */
+        /* Gradient mask - negro sólido desde las manos hacia abajo */
         .hero-gradient {
             position: absolute;
             bottom: 0;
             left: 0;
             right: 0;
-            height: 65%;
+            height: 80%;
             background: linear-gradient(
                 to top,
                 var(--negro) 0%,
-                rgba(10, 10, 10, 0.98) 15%,
-                rgba(10, 10, 10, 0.85) 30%,
-                rgba(10, 10, 10, 0.5) 50%,
-                transparent 75%
+                var(--negro) 30%,
+                rgba(10, 10, 10, 0.95) 45%,
+                rgba(10, 10, 10, 0.7) 60%,
+                rgba(10, 10, 10, 0.3) 80%,
+                transparent 100%
             );
             pointer-events: none;
             z-index: 3;
