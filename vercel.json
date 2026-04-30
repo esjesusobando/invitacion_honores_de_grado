@@ -1,13 +1,9 @@
 {
   "version": 2,
-  "builds": [
-    {
-      "src": "Honores_Grado_Noel.html",
-      "use": "@vercel/static"
-    }
-  ],
+  "cleanUrls": true,
+  "trailingSlash": false,
   "routes": [
-    { "src": "/", "dest": "/Honores_Grado_Noel.html" },
-    { "src": "/Honores_Grado_Noel.html" }
+    { "handle": "filesystem" },
+    { "src": "/(.*)", "dest": "/Honores_Grado_Noel.html" }
   ]
 }
